@@ -18,7 +18,7 @@
   "scripts": {
     "prepare": "install-peers",
     "build": "rollup -c && node scripts/postbuild.js",
-    "test": "jest src/*",
+    "test": "jest",
     "format": "prettier --write \"./**/*.{js,md,json}\"",
     "flow": "flow --show-all-errors",
     "flow:restart": "flow stop && npm run flow",
@@ -26,7 +26,7 @@
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "react": "^16.13.1"
+    "react": "^0.0.0-experimental-94c0244ba"
   },
   "peerDependenciesMeta": {
     "react-dom": {
@@ -69,8 +69,8 @@
     "lint-staged": ">=10",
     "prettier": "^2.0.5",
     "promise-polyfill": "^8.1.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^0.0.0-experimental-94c0244ba",
+    "react-dom": "^0.0.0-experimental-94c0244ba",
     "rollup": "^2.10.0",
     "rollup-plugin-includepaths": "^0.2.3",
     "rollup-plugin-terser": "^5.3.0",

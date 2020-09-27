@@ -33,6 +33,7 @@ const selector = require('../recoil_values/Recoil_selector');
 const invariant = require('../util/Recoil_invariant');
 const nullthrows = require('../util/Recoil_nullthrows');
 const stableStringify = require('../util/Recoil_stableStringify');
+const {createReactRoot} = require('./Recoil_CreateReactRoot');
 
 // TODO Use Snapshot for testing instead of this thunk?
 function makeStore(): Store {
@@ -76,12 +77,6 @@ class ErrorBoundary extends React.Component<
   render() {
     return this.state.hasError ? 'error' : this.props.children;
   }
-}
-
-function createReactRoot(container, contents) {
-  // To test in Concurrent Mode replace with:
-  // ReactDOM.createRoot(container).render(contents);
-  ReactDOM.render(contents, container);
 }
 
 function renderElements(elements: ?React.Node): HTMLDivElement {
