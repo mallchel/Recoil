@@ -46,7 +46,7 @@ const UNKNOWN_FUNCTION = '<unknown>';
  * This parses the different stack traces and puts them into one format
  * This borrows heavily from TraceKit (https://github.com/csnover/TraceKit)
  */
-export default function stackTraceParser(stackString: string): Array<Frame> {
+function stackTraceParser(stackString: string): Array<Frame> {
   const lines = stackString.split('\n');
 
   return lines.reduce((stack, line) => {
@@ -64,6 +64,8 @@ export default function stackTraceParser(stackString: string): Array<Frame> {
     return stack;
   }, []);
 }
+
+module.exports = stackTraceParser;
 
 const chromeRe = /^\s*at (.*?) ?\(((?:file|https?|blob|chrome-extension|native|eval|webpack|<anonymous>|\/|[a-z]:\\|\\\\).*?)(?::(\d+))?(?::(\d+))?\)?\s*$/i;
 const chromeEvalRe = /\((\S*)(?::(\d+))(?::(\d+))\)/;

@@ -11,11 +11,11 @@
 
 'use strict';
 
-import {useRef} from 'React';
+const {useRef} = require('React');
 
-import stackTraceParser from '../util/Recoil_stackTraceParser';
+const stackTraceParser = require('../util/Recoil_stackTraceParser');
 
-export default function useComponentName(): string {
+function useComponentName(): string {
   const nameRef = useRef();
   if (__DEV__) {
     if (nameRef.current === undefined) {
@@ -42,3 +42,5 @@ export default function useComponentName(): string {
   }
   return '<component name available only in dev mode>';
 }
+
+module.exports = useComponentName;

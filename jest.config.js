@@ -1,8 +1,6 @@
 module.exports = {
-  timers: 'fake',
-  globals: {
-    __DEV__: true,
-  },
-  testPathIgnorePatterns: ['/node_modules/'],
-  setupFiles: ['./setupJestMock.js'],
+  projects: [
+    './jest_configs/regular/jest.config.regular.js',
+    './jest_configs/concurrent/jest.config.concurrent.js',
+  ],
 };
